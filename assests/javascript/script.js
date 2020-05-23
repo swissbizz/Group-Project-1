@@ -4,7 +4,7 @@ var config = {
     authDomain: "http://group-project-1-ba68c.firebaseapp.com/",
     databaseURL: "https://group-project-1-ba68c.firebaseio.com",
     projectId: "group-project-1-ba68c",
-    storageBucket: "group-project-1-ba68c.appspot.com",
+    storageBucket: "http://group-project-1-ba68c.appspot.com/",
     messagingSenderId: "495056447741"
   };
   firebase.initializeApp(config);
