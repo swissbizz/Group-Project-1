@@ -120,6 +120,7 @@ body{
 #listRow{
 	margin-top: 50px;
 	border-top: 1px solid #288118;
+	border-bottom: 1px solid #288118;
 }
 
 /* */
@@ -141,6 +142,10 @@ body{
 
 #sessionBorder{
 	border-left: 1px solid #288118;
+}
+
+#musicSection{
+	border-bottom: 1px solid #288118;
 }
 
 /*-----------------------

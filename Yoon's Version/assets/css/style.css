@@ -120,6 +120,7 @@ body{
 #listRow{
 	margin-top: 50px;
 	border-top: 1px solid #288118;
+	border-bottom: 1px solid #288118;
 }
 
 /* */
