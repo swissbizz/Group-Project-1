@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Pip Boy Study Buddy2020</title>
+	<!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- CSS FILE -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+  <!-- FONTS -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!-- HEADER and QUOTE -->
+		<header id="home">
+
+			<div class="container text-center">
+
+				<h1 id="headerText">Pip Boy Study Buddy2020</h1>
+	      
+
+				<!-- Random Quotes -->
+				<div class="quote-div">
+					  <p class="quote" id="quote"></p> 
+						<p class="author" id="author"></p>
+				</div>
+				<div class="btn-container">
+					<button class="btn btn-success" id="quoteButton">Random Quote</button>
+				</div>
+
+			</div>
+
+		</header>
+
+<!-- TIMER SECIION -->
+		<div id="timerSection">
+
+			<div class="container text-center">
+
+				<h3 id="sectionHeaders">Let's get to work!</h3>
+
+				<h1 id="timer"><time>00:00:00</time></h1>
+
+				<div class="row" id="buttonsContainer">
+
+					<div class="col-md-4">
+
+						<div class="startBtn">
+							<img id="start" src="assets/images/play.png">
+						</div>
+						<p id="textBtn">Press this button once you are ready to start/resume the timer.</p>
+
+
+					</div>
+
+					<div class="col-md-4">
+
+						<div class="pauseBtn">
+							<img id="pause" src="assets/images/pause.png">
+						</div>
+						<p id="textBtn">Press this button to take a break! We recommend an hour break.</p>
+
+
+					</div>
+
+					<div class="col-md-4">
+
+						<div class="stopBtn">
+							<img id="stop" src="assets/images/stop.png">
+						</div>
+						<p id="textBtn">Press this button when you're done for the day. The minimum recommended is 20 hours per week</p>
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div><!--End timer section -->
+
+<!-- CHART -->
+		<div id="tableSection">
+
+			<div class="container text-center">
+
+				<h1 id="sectionHeaders">List of Times for Sessions</h1>
+				<br>
+				<div class="container" id="tableContainer">
+				 	<canvas id="myChart"></canvas>
+				</div>
+
+			</div>
+
+		</div>
+
+<!-- FILLER FOR NOW -->
+		<div id="filler" class="container">
+
+
+
+		</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+	<div class="container text-center">
+
+		<p id="footer">© Yoon Ryoo, Vivian Sheng, Eric Zimmermann 2020</p>
+
+	</div>
+
+ </footer>
+
+
+
+ <!-- JS FILE -->
+ <script type="text/javascript" src="assets/javascript/script.js"></script>
+
+
+</body>
+
+</html>
+</html>
