@@ -6,7 +6,7 @@ body{
     font-size:16px;
     font-weight:300;
     color:#6d6d6d;
-	overflow-x:hidden;
+	overflow-x:hidden;	
 }
 
 #sectionHeaders{
@@ -19,13 +19,13 @@ body{
 -------------------------*/
 #home{
 	width: 100%;
-	height: 650px;
+	height: 550px;
 	background:url('../images/pip-crop-fade-adjust.jpg') no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:#39ff14;
-	border-bottom: 8px solid #dbb98f;
+	border-bottom: 8px solid #39ff14;
 }
 
 #headerText{
@@ -117,32 +117,24 @@ body{
 	margin: 40px 80px;
 }
 
-/*-----------------------
----- Table Styles ----
--------------------------*/
-#tableSection{
-	width: 100%;
-	height: 750px;
-	background-color: #fff;
-	
+#listRow{
+	margin-top: 50px;
 }
-#tableContainer{
-	padding:50px;
-	width: 800px;
-	height:500px;
+/* */
+#full-memberlist{
+	height: 50px;
 }
+/* */
 
-/*-----------------------
----- Traffic Styles ----
--------------------------*/
-#trafficSection{
-	width: 100%;
-	height: 600px;
-	border-top: 8px solid #dbb98f;
-	border-bottom: 8px solid #dbb98f;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+/* */
+#displayRow{
+	margin-bottom: 30px;
+}
+/* */
+
+#display{
+	font-size: 60px;
+	margin-top: 25px;
 }
 
 /*-----------------------
@@ -153,8 +145,10 @@ body{
 	width: 100%;
 	height: 100px;
 	background-color: #334958;
+	margin-top: 120px;
+	border-top: 8px solid #39ff14;
 }
 
 #footer{
-	margin-top: 35px;
+	margin-top: 40px;
 }

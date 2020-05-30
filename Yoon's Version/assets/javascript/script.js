@@ -16,95 +16,109 @@ var config = {
 
 
 //TIMER
-var time = document.getElementById('timer');
-var start = document.getElementById('start');
-var pause = document.getElementById('pause');
-var stop = document.getElementById('stop');
-var seconds = 0;
-var minutes = 0;
-var hours = 0;
-var t;
+$(".startBtn").on("click", start);
+$(".pauseBtn").on("click", stop);
+$(".stopBtn").on("click", recordSession);
+$(".stopBtn").on("click", stop);
+$(".stopBtn").on("click", reset);
 
-// addedTime is a decimal / float so that we could see the fractional changes
-var addedSeconds = 0, addedMinutes = 0, addedHours = 0, addedTime = 0.01, newTime = 0;
 
-function add()
-{
-    seconds++;
-    if (seconds >= 60)
-    {
-        seconds = 0;
-        minutes++;
-        if (minutes >= 60)
-        {
-            minutes = 0;
-            hours++;
-        }
-    }
+var intervalId;
 
-    time.innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") +
-        ":" + (seconds > 9 ? seconds : "0" + seconds);
+var clockRunning = false;
+var time = 0;
+var lap = 1;
 
-    timer();
-}
+function start() {
 
-function timer()
-{
-      t = setTimeout(add, 1000);
+  // DONE: Use setInterval to start the count here and set the clock to running.
+  if (!clockRunning) {
+    intervalId = setInterval(count, 1000);
+    clockRunning = true;
+  }
 }
 
 
-$("#start").on("click", function(event) {
-        event.preventDefault();
-        $("#start").empty().append("Start");
-        clearTimeout(t);
-        timer();
-        console.log("Start");
-    });
 
-$("#pause").on("click", function(){
-    clearTimeout(t);
-    $("#start").empty().append("Start");
+function stop() {
+
+  // DONE: Use clearInterval to stop the count here and set the clock to not be running.
+  clearInterval(intervalId);
+  clockRunning = false;    
+}
+
+
+function reset() {
+
+  time = 0;
+  lap = 1;
+
+  // DONE: Change the "display" div to "00:00."
+  $("#display").text("00:00");
+
+}
+
+function recordSession() {
+
+  // DONE: Get the current time, pass that into the timeConverter function,
+  //       and save the result in a variable.
+  var converted = timeConverter(time);
+  
+  database.ref().push({
+    time: converted,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+  });
+  
+
+  // DONE: Add the current lap and time to the "laps" div.
+  $("#lastSession").append("<p>Session: " + lap + " : " + converted + "</p>");
+
+  // DONE: Increment lap by 1. Remember, we can't use "this" here.
+  lap++;
+
+}
+
+database.ref().on("child_added", function(snapshot) {
+  console.log("Session Time Recorded: " + snapshot.val().time);
+  $("#sessions").append("<p> Duration: " + snapshot.val().time + "</p>");
+
+}, function(errorObject) {
+  console.log("Errors handled: " + errorObject.code);
 });
 
-$("#stop").on("click", function() {
 
-    console.log("Seconds: " + seconds + " Minutes: " + minutes + " Hours: " + hours);
-    //send the values to go get added
-    sum(hours, minutes, seconds);
-    //console.log("stop");
-    $("#start").empty().append("Start");
-    clearInterval(t);
-    time.textContent = "00:00:00";
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
+function count() {
 
- });
-//END OF TIMER
+  // DONE: increment time by 1, remember we cant use "this" here.
+  time++;
+
+  // DONE: Get the current time, pass that into the timeConverter function,
+  //       and save the result in a variable.
+  var converted = timeConverter(time);
 
 
-// this function gets called everytime we stop the timerSection
-// basically, take the time we had when we stopped the timer
-// then add them all up... we want the answer to be in mins so hrs/secs get converted into minutes
-function sum(hrs, mins, secs){
-  newTime = hrs, mins, secs;
-  console.log("This session's time: " + newTime);
-  //send the sum to the db
-  saveToDb(newTime);
+  // DONE: Use the variable we just created to show the converted time in the "display" div.
+  $("#display").text(converted);
 }
 
-//changed it so that we only save one value in the database, the sum
-function saveToDb(time) {
-  var saveTime = {
-    time: time
-  };
-//everytime you stop the timer send the value of added time to the database so that we could retrieve it later
-  database.ref("/allTime").push(saveTime);
+function timeConverter(t) {
+
+  var minutes = Math.floor(t / 60);
+  var seconds = t - (minutes * 60);
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  if (minutes === 0) {
+    minutes = "00";
+  }
+  else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  return minutes + ":" + seconds;
 }
-
-
-
 //END OF TIMER
 
 // TABLE
@@ -131,6 +145,7 @@ function quote() {
   });
 }
 $("#quoteButton").on("click", function() {
+  $("#home").css("height", "725px");
   quote();
 });
 

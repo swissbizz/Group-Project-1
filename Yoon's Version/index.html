@@ -46,86 +46,71 @@
 
 		</header>
 
-<!-- TIMER SECIION -->
-		<div id="timerSection">
+<!-- TIMER -->
 
-			<div class="container text-center">
+<div class="container text-center" id="timerContainer">
+    <div class="row" id="displayRow">
+        <div class="col-md-12">
+            <div id="display">00:00</div>
+        </div>
+    </div>
 
-				<h3 id="sectionHeaders">Let's get to work!</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="startBtn">
+                <img id="start" src="assets/images/play.png">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="pauseBtn">
+                <img id="pause" src="assets/images/pause.png">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stopBtn">
+                <img id="stop" src="assets/images/stop.png">
+            </div>
+        </div>
+    </div>
+    <div class="row" id="listRow">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-1">
+                <div class="card-header">
+                    <h1>Current Sessions</h1>
+                </div>
+                <div class="card-body">
+                    <div id="lastSession"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mt-1">
+                <div class="card-header">
+                    <h1>All Sessions</h1>
+                </div>
+                <div class="card-body">
+                    <div id="sessions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-				<h1 id="timer"><time>00:00:00</time></h1>
+<div class="row">
+    <footer class="footer">
 
-				<div class="row" id="buttonsContainer">
-
-					<div class="col-md-4">
-
-						<div class="startBtn">
-							<img id="start" src="assets/images/play.png">
-						</div>
-						<p id="textBtn">Press this button once you are ready to start/resume the timer.</p>
-
-
-					</div>
-
-					<div class="col-md-4">
-
-						<div class="pauseBtn">
-							<img id="pause" src="assets/images/pause.png">
-						</div>
-						<p id="textBtn">Press this button to take a break! We recommend an hour break.</p>
-
-
-					</div>
-
-					<div class="col-md-4">
-
-						<div class="stopBtn">
-							<img id="stop" src="assets/images/stop.png">
-						</div>
-						<p id="textBtn">Press this button when you're done for the day. The minimum recommended is 20 hours per week</p>
-
-
-					</div>
-
-				</div>
-
-			</div>
-
-
-		</div><!--End timer section -->
-
-<!-- CHART -->
-		<div id="tableSection">
-
-			<div class="container text-center">
-
-				<h1 id="sectionHeaders">List of Times for Sessions</h1>
-				<br>
-				<div class="container" id="tableContainer">
-				 	<canvas id="myChart"></canvas>
-				</div>
-
-			</div>
-
-		</div>
-
-<!-- FILLER FOR NOW -->
-		<div id="filler" class="container">
-
-
-
-		</div>
-
+        <div class="container text-center">
+    
+            <p id="footer">© Yoon Ryoo, Vivian Sheng, Eric Zimmermann 2020</p>
+    
+        </div>
+    
+     </footer>
+</div>
 <!-- FOOTER -->
-<footer class="footer">
 
-	<div class="container text-center">
-
-		<p id="footer">© Yoon Ryoo, Vivian Sheng, Eric Zimmermann 2020</p>
-
-	</div>
-
- </footer>
 
 
 
