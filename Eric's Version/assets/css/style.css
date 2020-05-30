@@ -19,7 +19,7 @@ body{
 -------------------------*/
 #home{
 	width: 100%;
-	height: 650px;
+	height: 550px;
 	background:url('../images/pip-crop-fade-adjust.jpg') no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -117,6 +117,32 @@ body{
 	margin: 40px 80px;
 }
 
+#listRow{
+	margin-top: 50px;
+	border-top: 1px solid #288118;
+}
+
+/* */
+#full-memberlist{
+	height: 50px;
+}
+/* */
+
+/* */
+#displayRow{
+	margin-bottom: 30px;
+}
+/* */
+
+#display{
+	font-size: 72px;
+	margin-top: 25px;
+}
+
+#sessionBorder{
+	border-left: 1px solid #288118;
+}
+
 /*-----------------------
 ---- Music Styles Styles ----
 -------------------------*/
@@ -164,6 +190,7 @@ body{
 	margin: 40px 80px;
 }
 
+
 /*-----------------------
 ---- Chart Styles ----
 -------------------------*/
@@ -179,18 +206,6 @@ body{
 	height:500px;
 }
 
-/*-----------------------
----- Traffic Styles ----
--------------------------*/
-#trafficSection{
-	width: 100%;
-	height: 600px;
-	border-top: 8px solid #dbb98f;
-	border-bottom: 8px solid #dbb98f;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-}
 
 /*-----------------------
 ---- Footer Styles ----
