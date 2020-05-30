@@ -126,17 +126,49 @@ var weeks = [];
 
 function Music() {
 
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://spotifystefan-skliarovv1.p.rapidapi.com/addTracksToPlaylist",
-    "method": "POST",
-    "headers": {
-      "x-rapidapi-host": "Spotifystefan-skliarovV1.p.rapidapi.com",
-      "x-rapidapi-key": "98ae93ea11mshbd6db64cdf6a0d6p155044jsn1fc9eb257c7f",
-      "content-type": "application/x-www-form-urlencoded"
-    },
-    "data": {}
+  var Lastfm = require('simple-lastfm');
+
+  var lastfm = new Lastfm({
+	api_key: '95300f73d09bc711f171458d30ce2250',
+	api_secret: '73d7dd5bb5350d8184e237714398f498',
+	username: 'swissbizz',
+	password: 'Venom2099@!!',
+	authToken: 'xxx' // Optional, you can use this instead of password, where authToken = md5(username + md5(password))
+});
+
+lastfm.getSessionKey(function(result) {
+	console.log("session key = " + result.session_key);
+	if(result.success) {
+		lastfm.scrobbleNowPlayingTrack({
+			artist: 'Ratatat',
+			track: 'Seventeen Years',
+			callback: function(result) {
+				console.log("in callback, finished: ", result);
+			}
+		});
+		lastfm.scrobbleTrack({
+			artist: 'Bonobo',
+			track: 'Black Sands',
+			callback: function(result) {
+				console.log("in callback, finished: ", result);
+			}
+		});
+		lastfm.loveTrack({
+			artist: 'Electrelane',
+			track: 'Suitcase',
+			callback: function(result) {
+				console.log("in callback, finished: ", result);
+			}
+		});
+		lastfm.unloveTrack({
+			artist: 'something crap',
+			track: 'no thanks',
+			callback: function(result) {
+				console.log("in callback, finished: ", result);
+			}
+		});
+	} else {
+		console.log("Error: " + result.error);
   }
   
   $.ajax(settings).done(function (response) {
@@ -144,7 +176,7 @@ function Music() {
   });
 
   $.ajax({
-    url: "https://spotifystefan-skliarovv1.p.rapidapi.com/addTracksToPlaylist",
+    url: "/2.0/?method=library.getartists&api_key=95300f73d09bc711f171458d30ce2250&user=swissbizz&format=json",
     jsonp: "jsonp",
     dataType: "jsonp",
     data: {
@@ -157,15 +189,12 @@ function Music() {
       $('#artist').html("<br/>&dash; " + response.playSong)
     }
   });
-  }
+  },
   $("#musicButton").on("click", function() {
-  Music();
-  });
+  Music();  
+}
   
-  // Random quotes Ends Here
-
-//END OF MUSIC
-
+ //END OF MUSIC
 
 
 // CHART
