@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Pip Boy Study Buddy2020</title>
+	<!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- CSS FILE -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+  <!-- FONTS -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+</head>
+<body>
+
+<!-- HEADER & QUOTE -->
+		<header id="home">
+
+			<div class="container text-center">
+
+				<h1 id="headerText">Pip Boy Study Buddy2020</h1>
+	      
+
+				<!-- Random Quotes -->
+				<div class="quote-div">
+					  <p class="quote" id="quote"></p> 
+						<p class="author" id="author"></p>
+				</div>
+				<div class="btn-container">
+					<button class="btn btn-success" id="quoteButton">Random Quote</button>
+				</div>
+
+			</div>
+
+		</header>
+
+<!-- TIMER -->
+
+<div class="container text-center" id="timerContainer">
+    <div class="row" id="displayRow">
+        <div class="col-md-12">
+            <div id="display">00:00</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="startBtn">
+                <img id="start" src="assets/images/play.png">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="pauseBtn">
+                <img id="pause" src="assets/images/pause.png">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stopBtn">
+                <img id="stop" src="assets/images/stop.png">
+            </div>
+        </div>
+    </div>
+    <div class="row" id="listRow">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-1">
+                <div class="card-header">
+                    <h1>Current Sessions</h1>
+                </div>
+                <div class="card-body">
+                    <div id="lastSession"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" id="sessionBorder">
+            <div class="card mt-1">
+                <div class="card-header">
+                    <h1>All Sessions</h1>
+                </div>
+                <div class="card-body">
+                    <div id="sessions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+</div><!--End timer section -->
+
+<!-- ==============================================
+		MUSIC
+		=============================================== -->
+		<div id="musicSection">
+
+			<div class="container text-center">
+
+				<h1 id="sectionHeaders">Music!</h1>
+				<br>
+				<div class="container" id="chartContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+			</div>
+
+		</div><!--End Music section -->
+
+
+<!-- ==============================================
+		CHART
+		=============================================== -->
+		<div id="chartSection">
+
+			<div class="container text-center">
+
+				<h1 id="sectionHeaders">Minutes Worked During Current Session</h1>
+				<br>
+				<div class="container" id="chartContainer">
+				 	<canvas id="myChart"></canvas>
+				</div>
+
+			</div>
+
+		</div><!--End chart section -->
+
+
+<footer class="footer">
+
+    <div class="container text-center">
+    
+        <p id="footer">© Yoon Ryoo, Vivian Sheng, Eric Zimmermann 2020</p>
+    
+    </div>
+    
+</footer>
+
+<!-- FOOTER -->
+
+
+ <!-- JS FILE -->
+ <script type="text/javascript" src="assets/javascript/script2.js"></script>
+
+
+</body>
+
+</html>
+</html>
